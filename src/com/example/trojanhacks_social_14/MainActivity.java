@@ -1,12 +1,11 @@
-package com.example.trojanhacks_social_14;
+package com.example.hello;
 
 import android.app.Activity;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class MainActivity extends Activity{
@@ -23,10 +22,10 @@ public class MainActivity extends Activity{
         //RYANvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
         
         logInButton = (Button) findViewById(R.id.logInButton);
-        logInButton.setOnClickListener( new View.OnClickListener(){
+        logInButton.setOnClickListener( new OnClickListener(){
 
 			@Override
-			public void onClick(DialogInterface dialog, int which) {
+			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
 			}
