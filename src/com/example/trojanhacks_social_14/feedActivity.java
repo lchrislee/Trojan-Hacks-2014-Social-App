@@ -3,6 +3,7 @@ package com.example.hello;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,6 +20,8 @@ public class feedActivity extends Activity {
 	private ImageButton imbnChat;
 	private ImageButton imbnSettings;
 	private ListView lsvwPosts;
+	
+	private int sortPriority = -1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,45 +42,35 @@ public class feedActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
+				Intent i = new Intent(Find.class);
+				startActivity(i);
 			}
 		});
 		
-		imbnSort.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				AlertDialog.Builder adBuilder = new AlertDialog.Builder(getApplicationContext());
-				adBuilder.setTitle("Sort By:");
-				adBuilder.setPositiveButton("Sort", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						Toast.makeText(getApplicationContext(), "Sort", Toast.LENGTH_LONG).show();
-					}
-				});
-				
-				adBuilder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						Toast.makeText(getApplicationContext(), "Cancel", Toast.LENGTH_LONG).show();
-						
-					}
-				});
-				
-				AlertDialog ad = adBuilder.create();
-				ad.show();
-			}
-		});
+//		imbnSort.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				AlertDialog.Builder adBuilder = new AlertDialog.Builder(getApplicationContext());
+//				adBuilder.setTitle("Sort By:");
+//				adBuilder.setSingleChoiceItems(new String[] {"hello"}, -1, new DialogInterface.OnClickListener() {
+//					
+//					@Override
+//					public void onClick(DialogInterface dialog, int which) {
+//						sortPriority = which;
+//					}
+//				});
+//				AlertDialog ad = adBuilder.create();
+//				ad.show();
+//			}
+//		});
 		
 		imbnChat.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
+				Intent i = new Intent(ChatScreen.class);
+				startActivity(i);
 			}
 		});
 		
@@ -85,8 +78,6 @@ public class feedActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
 			}
 		});
 		
