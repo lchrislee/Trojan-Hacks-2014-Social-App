@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <EditTextPreference
+        android:defaultValue="User"
+        android:key="pref_key_name"
+        android:summary="Enter your preferred name"
+        android:title="Name" />
+    
+    <EditTextPreference
+        android:defaultValue="00000"
+        android:key="pref_key_zipcode"
+        android:summary="Enter your zipcode"
+        android:title="Zipcode" />
+    
+    <EditTextPreference
+        android:defaultValue="18"
+        android:key="pref_key_age"
+        android:summary="Enter your age"
+        android:title="Age" />
+    <ListPreference
+        android:defaultValue="@string/male_value"
+        android:entries="@array/prefs_gender"
+        android:entryValues="@array/prefs_gender_values"
+        android:key="pref_key_gender"
+        android:summary="Choose your gender"
+        android:title="Gender" />
+
+</PreferenceScreen>
