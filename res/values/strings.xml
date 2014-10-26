@@ -1,7 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">trojanhacks_social_14</string>
+    <string name="app_name">Week7-PrefActivity</string>
     <string name="hello_world">Hello world!</string>
+	<string name="male_value">Male</string>
+	<string name="female_value">Female</string>
+
+    <string-array name="prefs_gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    
+    <string-array name="prefs_gender_values">
+        <item>@string/male_value</item>
+        <item>@string/female_value</item>
+    </string-array>
 
 </resources>
