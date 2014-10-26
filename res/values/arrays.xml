@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="SlideMenuCategories">
+        <item>Home</item>
+        <item>Change Name</item>
+        <item>Change Picture</item>
+        <item>Fill Survey</item>
+        <item>Privacy Settings</item>
+        <item>System Settings</item>
+    </string-array>
+    
+    
+</resources>
