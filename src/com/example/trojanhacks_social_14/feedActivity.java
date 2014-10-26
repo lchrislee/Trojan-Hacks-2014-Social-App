@@ -1,5 +1,8 @@
 package com.example.hello;
 
+import com.example.hello.chat.ChatActivity;
+
+import messageAdapter.MessageAdapter;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -33,6 +36,7 @@ public class feedActivity extends Activity {
 		imbnChat = (ImageButton) findViewById(R.id.imbnChat);
 		imbnSettings = (ImageButton) findViewById(R.id.imbnSettings);
 		lsvwPosts = (ListView) findViewById(R.id.lsvwEvents);
+		lsvwPosts.setAdapter(new MessageAdapter());
 		
 		assignListeners();
 	}
@@ -42,34 +46,33 @@ public class feedActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(Find.class);
-				startActivity(i);
+//				Intent i = new Intent(Find.class);
+//				startActivity(i);
 			}
 		});
 		
-//		imbnSort.setOnClickListener(new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View v) {
-//				AlertDialog.Builder adBuilder = new AlertDialog.Builder(getApplicationContext());
-//				adBuilder.setTitle("Sort By:");
-//				adBuilder.setSingleChoiceItems(new String[] {"hello"}, -1, new DialogInterface.OnClickListener() {
-//					
-//					@Override
-//					public void onClick(DialogInterface dialog, int which) {
-//						sortPriority = which;
-//					}
-//				});
-//				AlertDialog ad = adBuilder.create();
-//				ad.show();
-//			}
-//		});
+		imbnSort.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				AlertDialog.Builder adBuilder = new AlertDialog.Builder(getApplicationContext());
+				adBuilder.setTitle("Sort By:").setSingleChoiceItems(new String[] {"hello", "Pick Me", "TRY ME"}, -1, new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						sortPriority = which;
+					}
+				});
+				AlertDialog ad = adBuilder.create();
+				ad.show();
+			}
+		});
 		
 		imbnChat.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(ChatScreen.class);
+				Intent i = new Intent(getApplicationContext(), ChatActivity.class);
 				startActivity(i);
 			}
 		});
@@ -87,13 +90,11 @@ public class feedActivity extends Activity {
 			public void onItemSelected(AdapterView<?> parent, View view,
 					int position, long id) {
 				// TODO Auto-generated method stub
-				
 			}
 
 			@Override
 			public void onNothingSelected(AdapterView<?> parent) {
 				// TODO Auto-generated method stub
-				
 			}
 		});
 	}
